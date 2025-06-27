@@ -14,22 +14,22 @@ const MicroMedicsGame = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [score, setScore] = useState(0);
   const [health, setHealth] = useState(100);
-  // const [level, setLevel] = useState(1);
+  const [level, setLevel] = useState(1);
   const [xp, setXp] = useState(0);
   const [coins, setCoins] = useState(150);
   
   // === GAMEPLAY STATE ===
   const [repairedNeurons, setRepairedNeurons] = useState(new Set());
   const [viruses, setViruses] = useState([]);
-  // const [powerUps, setPowerUps] = useState([]);
+  const [powerUps, setPowerUps] = useState([]);
   const [combo, setCombo] = useState(0);
   const [invulnerable, setInvulnerable] = useState(false);
   const [currentTool, setCurrentTool] = useState('basic');
   
   // === UI STATE ===
   const [gameStarted, setGameStarted] = useState(false);
-  // const [showTutorial, setShowTutorial] = useState(false);
-  // const [tutorialStep, setTutorialStep] = useState(0);
+  const [showTutorial, setShowTutorial] = useState(false);
+  const [tutorialStep, setTutorialStep] = useState(0);
   const [showStageComplete, setShowStageComplete] = useState(false);
   const [currentHint, setCurrentHint] = useState('');
   const [showFact, setShowFact] = useState(null);
