@@ -15,8 +15,8 @@ const IntroScreen = ({
   onStartGame
 }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-700 to-indigo-900 flex items-center justify-center p-4">
-      <div className="text-center max-w-4xl">
+    <div className="w-full min-h-screen bg-gradient-to-br from-blue-900 via-purple-700 to-indigo-900 flex items-center justify-center p-4 overflow-y-auto">
+      <div className="text-center max-w-4xl w-full">
         <div className="flex items-center justify-center mb-6">
           <span className="text-6xl mr-3 animate-pulse">🧠</span>
           <h1 className="text-4xl font-bold text-cyan-400 font-mono">Micro Medics</h1>
@@ -79,19 +79,21 @@ const IntroScreen = ({
           </div>
         </div>
         
-        <button
-          className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
-          onClick={onStartGame}
-        >
-          🌟 Start Healing
-        </button>
-        
-        <button
-          className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-          onClick={() => setShowShipSelector(true)}
-        >
-          🚀 Customize Ship
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            onClick={onStartGame}
+          >
+            🌟 Start Healing
+          </button>
+          
+          <button
+            className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+            onClick={() => setShowShipSelector(true)}
+          >
+            🚀 Customize Ship
+          </button>
+        </div>
 
         {showShipSelector && (
           <ShipSelector

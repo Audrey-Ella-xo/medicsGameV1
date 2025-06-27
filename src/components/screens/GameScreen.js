@@ -238,7 +238,7 @@ const GameScreen = ({
 
   return (
     <div 
-      className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-700 to-indigo-900 p-2"
+      className="w-full min-h-screen bg-gradient-to-br from-blue-900 via-purple-700 to-indigo-900 p-2 overflow-y-auto"
       style={{ 
         transform: screenShake ? `translate(${(Math.random() - 0.5) * screenShake}px, ${(Math.random() - 0.5) * screenShake}px)` : 'none',
         transition: screenShake ? 'none' : 'transform 0.1s'

@@ -5,7 +5,9 @@ import MicroMedicsGame from './components/MicroMedicsGame';
 function App() {
   return (
     <div className="App">
-      <MicroMedicsGame />
+      <div className="game-container">
+        <MicroMedicsGame />
+      </div>
     </div>
   );
 }

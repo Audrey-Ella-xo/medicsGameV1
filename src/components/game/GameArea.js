@@ -115,10 +115,10 @@ const GameArea = ({
   return (
     <div 
       ref={gameAreaRef}
-      className={`relative bg-black bg-opacity-20 border-2 rounded-2xl overflow-hidden transition-all duration-300 border-cyan-400 border-opacity-40 ${
+      className={`game-area relative bg-black bg-opacity-20 border-2 rounded-2xl overflow-hidden transition-all duration-300 border-cyan-400 border-opacity-40 ${
         invulnerable ? 'ring-4 ring-blue-300 ring-opacity-50' : ''
       }`}
-      style={{ height: '60vh', touchAction: 'none' }}
+      style={{ touchAction: 'manipulation' }}
       onClick={handleClick}
       tabIndex={0}
     >

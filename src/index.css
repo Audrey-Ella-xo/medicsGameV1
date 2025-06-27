@@ -1,23 +1,145 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and base styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-* {
-  box-sizing: border-box;
+  background: #000;
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Game container styles */
+.game-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 4px;
+  }
+  
+  /* Ensure UI elements are touchable on mobile */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Adjust text sizes for mobile */
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+}
+
+/* Prevent zoom on mobile inputs */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Game area specific styles */
+.game-area {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/10;
+  min-height: 300px;
+  max-height: 70vh;
+  touch-action: manipulation; /* Improve touch performance */
+}
+
+@media (max-width: 768px) {
+  .game-area {
+    min-height: 250px;
+    max-height: 60vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .game-area {
+    max-height: 50vh;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure modal overlays work properly */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Prevent body scroll when modals are open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
