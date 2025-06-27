@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useCallback } from 'react';
 import IntroScreen from './screens/IntroScreen';
 import GameScreen from './screens/GameScreen';
